@@ -19,9 +19,9 @@ app.get('/data', (req, res)=> {
     });
 });
 
-app.get('/bad-request', (req,res)=> {
-    throw new Error('manual error');
-});
+// app.get('/bad-request', (req,res)=> {
+//     throw new Error('manual error');
+// });
 
 app.get('/bad-request-2', (req,res)=> {
     let arr;

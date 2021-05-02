@@ -12,7 +12,7 @@ describe('Testing Server Module', ()=> {
     });
 
     it('handles errors', async ()=> {
-        let response = await serverRequest.get('/bad-request');
+        let response = await serverRequest.get('/bad-request-2');
         expect(response.status).toEqual(500);
     });
 
@@ -20,5 +20,14 @@ describe('Testing Server Module', ()=> {
         let response = await serverRequest.get('/');
         expect(response.status).toEqual(200);
         expect(response.text).toEqual('Hello from Server home route');
+    });
+    it('handle home route', async ()=> {
+        let response = await serverRequest.get('/data');
+        expect(response.status).toEqual(200);
+        // console.log(response);
+        expect(response.body).toEqual({
+            name: "ishaq",
+            age: 22
+        });
     });
 });
